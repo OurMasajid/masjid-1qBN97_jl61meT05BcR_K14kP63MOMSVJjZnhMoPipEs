@@ -39,6 +39,9 @@ var OM = {
     if ($(".jumma-prayer")) {
       setTimeout(JummaPrayer.start());
     }
+    if ($(".news-container")) {
+      setTimeout(OMNews.start());
+    }
   },
   httpLoader: function(callback) {
     var xhttp = new XMLHttpRequest();
@@ -254,4 +257,41 @@ var MCalendar = {
       OM.getFormatedTime(end)
     );
   }
+};
+var OMNews = {
+  ui: $(".newses"),
+  start: function(){
+    if(!this.ui){
+      console.log("news ui is missing.");
+      return;
+    }
+    var finalHtml = "";
+    for (var i = 0; i < OM.data["News"]["data"].length; i++) {
+      var element = OM.data["News"]["data"][i];
+      var ui = this.ui.clone();
+      var uiTitle = ui.find(".news-title");
+      if (element["Title"]) {
+        uiTitle.html(element["Title"]);
+      }
+      else{
+        uiTitle.remove();
+      }
+      var uiDescription = ui.find(".news-description");
+      if (element["Description"]) {
+        uiDescription.html(element["Description"]);
+      }
+      else{
+        uiDescription.remove();
+      }
+      var uiLink = ui.find(".news-link");
+      if (element["Link"]) {
+        uiLink.attr("href",element["Link"]);
+      }
+      else{
+        uiLink.remove();
+      }
+      finalHtml += ui.html();
+    }
+    this.ui.html(finalHtml);
+  },
 };

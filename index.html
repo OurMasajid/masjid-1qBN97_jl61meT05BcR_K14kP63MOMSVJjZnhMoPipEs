@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Abel|Montserrat" rel="stylesheet">
   <style>
@@ -109,7 +109,6 @@
         .text-small {
           font-size: .83rem;
         }
-
       }
       .event-title{
         font-size: 2.2rem;
@@ -121,11 +120,19 @@
       .top-hr {
         border-top: 1px solid rgba(0,0,0,.1);
       }
-
+      .btn-scroll-top {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        
+      }
     </style>
 </head>
 
 <body>
+  <a href="./" class="btn btn-info border-light btn-scroll-top">top</a>
   <header>
     <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
       <div class="container">
@@ -153,11 +160,17 @@
   <div class="bg-light text-center py-5">
     <img class="logo" src="https://ourmasajid.github.io/masjid-1qBN97_jl61meT05BcR_K14kP63MOMSVJjZnhMoPipEs/ICRR-Logo.svg">
   </div>
-  <div id="news" class="bg-success text-center py-5 text-white">
-    <h2 class="display-2">News</h2>
+  <div id="news" class="bg-success py-5 text-white">
+    <h2 class="display-2 text-center">News</h2>
     <hr class="star-light">
-    <div class="container container-small">
-      <h3 class="display-4">More information</h3>
+    <div class="container container-small newses">
+      <div class="card border-light bg-success my-1">
+        <div class="card-body">
+          <h3 class="display-3 news-title">Loading...</h3>
+          <p class="lead news-description"></p>
+          <a href="#" class="btn btn-outline-light news-link"></a>
+        </div>
+      </div>
     </div>
   </div>
   <div id="calendar" class="bg-light py-5">
@@ -263,10 +276,9 @@
         special programs for Ramadan including Iftar, Daily Taraweeh and arrangements for Aitikaf. ICRR also holds
         various halaqas and programs for the community (please refer to programs page for details). Click <a href="https://drive.google.com/file/d/0B66gbzLYAXtvM1VZeDdlamlaZTQ/view?usp=sharing"
           target="_blank">here</a> for ICRR bylaws.</p>
-          <p>We are located at <br><a target="_blank" class="text-white" href="https://www.google.com/maps/place/Islamic+Center+of+Round+Rock/@30.488992,-97.660475,14z/data=!4m13!1m7!3m6!1s0x8644d1d43e1f1eaf:0x7c93ce4f5e8e534d!2s1951+Hampton+Ln,+Round+Rock,+TX+78664!3b1!8m2!3d30.4912968!4d-97.6591546!3m4!1s0x8644d1d43e0224ab:0xa82587f1cfd8b743!8m2!3d30.4912972!4d-97.6591811?hl=en" ><b>1951 Hampton Ln, Round Rock, TX 78664</b></a></p>
       <a class="btn btn-primary" target="_blank" href="https://www.facebook.com/RoundRockMasjid" role="button">Join Us
-        On
-        Facebook</a>
+      <a class="btn btn-outline-light" target="_blank" href="https://www.facebook.com/RoundRockMasjid" role="button">Join
+        Us On Facebook</a>
     </div>
   </div>
   <div id="donate" class="bg-light text-center py-5">
@@ -277,21 +289,23 @@
         "Whoever builds a mosque with the intention of seeking Allah's pleasure, Allah will build for him a place in
         Paradise."<br>
         Sahih Al-Bukhai, Hadith #441 | Vol.1 | Agreed Upon</p>
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="display:none"><input type="hidden" name="cmd" value="_s-xclick">
-        <input type="hidden" name="hosted_button_id" value="TAFAB8228JPUL"> <input id="paypalbtn" type="image" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif"
-          alt="PayPal - The safer, easier way to pay online!"></form>
-          <div class="btn btn-info" target="_blank" onclick="paypalbtn.click(); return false;">Donate online</div>
-          <br>
-          Or mail check to masjid address: <br><b>​1951 Hampton Ln, Round Rock, TX  78664</b>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="display:none"><input type="hidden" name="cmd"
+          value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="TAFAB8228JPUL"> <input id="paypalbtn" type="image" name="submit"
+          src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" alt="PayPal - The safer, easier way to pay online!"></form>
+      <div class="btn btn-info" target="_blank" onclick="paypalbtn.click(); return false;">Donate online</div>
+      <br>
+      Or mail check to masjid address: <br><b>​1951 Hampton Ln, Round Rock, TX 78664</b>
     </div>
   </div>
-  <div id="contact" class="bg-info text-center py-5 text-white">
-    <h2 class="display-2">Contact Us</h2>
+  <div id="contact" class="bg-info py-5 text-white">
+    <h2 class="display-2  text-center">Contact Us</h2>
     <hr class="star-light">
     <div class="container container-small">
-      <h3 class="display-3">Address</h3>
-      <p>Islamic center located at <br><a target="_blank" class="text-white" href="https://www.google.com/maps/place/Islamic+Center+of+Round+Rock/@30.488992,-97.660475,14z/data=!4m13!1m7!3m6!1s0x8644d1d43e1f1eaf:0x7c93ce4f5e8e534d!2s1951+Hampton+Ln,+Round+Rock,+TX+78664!3b1!8m2!3d30.4912968!4d-97.6591546!3m4!1s0x8644d1d43e0224ab:0xa82587f1cfd8b743!8m2!3d30.4912972!4d-97.6591811?hl=en" ><b>1951 Hampton Ln, Round Rock, TX 78664</b></a></p>
-      <form method="POST" netlify>
+      <h3 class="display-3 text-center">Address</h3>
+      <p class="text-center">Islamic center located at <br><a target="_blank" class="text-white" href="https://www.google.com/maps/place/Islamic+Center+of+Round+Rock/@30.488992,-97.660475,14z/data=!4m13!1m7!3m6!1s0x8644d1d43e1f1eaf:0x7c93ce4f5e8e534d!2s1951+Hampton+Ln,+Round+Rock,+TX+78664!3b1!8m2!3d30.4912968!4d-97.6591546!3m4!1s0x8644d1d43e0224ab:0xa82587f1cfd8b743!8m2!3d30.4912972!4d-97.6591811?hl=en"><b>1951
+            Hampton Ln, Round Rock, TX 78664</b></a></p>
+      <form name="ICRR Contact Form" method="POST" netlify>
         <div class="form-group">
           <label for="Name">Name</label>
           <input type="text" class="form-control" name="Name">
@@ -304,7 +318,7 @@
           <label for="Message">Message</label>
           <textarea class="form-control" name="Message" rows="3"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary w-100">Send message</button>
+        <button type="submit" class="btn btn-outline-light w-100">Send message</button>
       </form>
     </div>
   </div>
@@ -324,6 +338,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
   <script src="./masjid.js"></script>
+  <script src="./ui.js"></script>
   <script>
     setTimeout(OM.start());
   </script>
