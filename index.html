@@ -307,15 +307,15 @@
       <form name="ICRR Contact Form" method="POST" netlify-honeypot="must-message" netlify>
         <div class="form-group">
           <label for="Name">Name</label>
-          <input type="text" class="form-control" name="Name">
+          <input type="text" class="form-control" name="Name" required>
         </div>
         <div class="form-group">
           <label for="Email">Email</label>
-          <input type="email" class="form-control" name="Email">
+          <input type="email" class="form-control" name="Email" required>
         </div>
         <div class="form-group">
           <label for="Message">Message</label>
-          <textarea class="form-control" name="Message" rows="3"></textarea>
+          <textarea class="form-control" name="Message" rows="3" required></textarea>
         </div>
         <div class="form-group d-none">
           <label for="must-message">This is not to be filled</label>
