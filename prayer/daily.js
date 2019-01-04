@@ -12,7 +12,7 @@ function loader(vartosaveto, url, callback) {
 var tobedeleted = {
  "masjidKey" : window.location.href.split("?")[1]
 };
-tobedeleted["dataurl"] = tobedeleted.masjidKey+"/data.json";
+tobedeleted["dataurl"] = "./data.json";
 tobedeleted["data"]= "";
  
 
