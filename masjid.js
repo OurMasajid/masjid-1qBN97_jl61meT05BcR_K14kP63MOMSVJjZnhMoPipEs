@@ -1,6 +1,6 @@
 var OM = {
   url: "",
-  defaultUrl: "./data.json",
+  defaultUrl: "/data.json",
   data: "",
   today: new Date(),
   todayDay: new Date().getDate(),
