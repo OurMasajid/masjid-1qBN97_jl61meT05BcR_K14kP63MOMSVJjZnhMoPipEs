@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Abel|Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123579307-1"></script>
     <script>
@@ -109,6 +109,10 @@
             margin: 10px 0;
         }
 
+        .card-body {
+            padding: .5rem;
+        }
+
         @media (max-width: 500px) {
             .container {
                 padding-left: 5px;
@@ -119,9 +123,7 @@
                 padding: .75rem .5rem;
             }
 
-            .card-body {
-                padding: .5rem;
-            }
+
 
             .text-small {
                 font-size: .83rem;
@@ -129,8 +131,9 @@
         }
 
         .event-title {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-family: 'Abel', sans-serif;
+            margin: 0;
         }
 
         .cursor-pointer {
@@ -153,9 +156,8 @@
 </head>
 
 <body>
-    <div id="calendar" class="bg-light py-5">
-        <h2 class="display-2 text-center">Events</h2>
-        <hr class="star-light">
+    <div id="calendar">
+        <h2 class="display-3 text-center">Events</h2>
         <div class="container container-medium text-small m-calendar">
             <div class="card card-body my-1 event">
                 <p class="event-title text-small text-dark">Loading...</p>
