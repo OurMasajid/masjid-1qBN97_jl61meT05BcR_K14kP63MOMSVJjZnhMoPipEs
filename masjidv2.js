@@ -1,11 +1,13 @@
 var OM = {
   url: "",
-  defaultUrl: "/data.json",
+  defaultUrl: "./data.json", //todo remove the period before publish
   data: "",
   today: new Date(),
   todayDay: new Date().getDate(),
   todayMonth: new Date().getMonth() + 1,
   tomorrow: new Date(+new Date() + 86400000),
+  // tomorrowDay: new Date(+new Date() + 86400000).getDate(),
+  // tomorrowMonth: new Date(+new Date() + 86400000).getMonth() + 1,
   monthNames: [
     "January",
     "February",
