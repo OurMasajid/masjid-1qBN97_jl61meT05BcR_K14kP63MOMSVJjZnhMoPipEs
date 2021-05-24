@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+
+    <title>Monthly Prayer</title>
+
+    <style>
+        @media print {
+            .table td,
+            .table th {
+                background-color: #fff !important;
+            }
+            .scr-only {
+                display: none;
+            }
+        }
+
+        body {
+            -webkit-print-color-adjust: exact;
+            font-family: Verdana, Geneva, sans-serif;
+        }
+
+        h2 {
+            padding: 0;
+            margin: 0;
+        }
+
+        .headings {
+            padding: 10px;
+            color: darkblue;
+        }
+
+        .headings p {
+            padding: 0;
+            margin: 0;
+        }
+
+        th,
+        td {
+            padding: 0rem !important;
+        }
+
+        th {
+            font-weight: 100 !important;
+        }
+
+        td {
+            font-weight: 600 !important;
+            font-size: 17px;
+        }
+
+        th {
+            background: gray;
+            color: white;
+        }
+
+        td:nth-child(1) {
+            color: darkblue
+        }
+
+        td:nth-child(3),
+        td:nth-child(6),
+        td:nth-child(8),
+        td:nth-child(10),
+        td:nth-child(12) {
+            color: red;
+        }
+
+        tr:nth-child(even) {
+            background-color: #d1d1d1 !important;
+        }
+
+        table {
+            width: 7.5in;
+            height: 9in;
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+
+        .scr-only {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body style="text-align:center">
+    <div class="scr-only p-3">
+
+        <button onclick="window.print();" class="btn btn-primary scr-only">Click to print</button>
+
+    </div>
+    <div class="headings">
+        <h2 id="masjidname">{title}</h2>
+        <p id="masjidaddress">{address}</p>
+    </div>
+    <div>
+        <table align="center">
+            <thead>
+                <tr class="">
+                    <th>Date</th>
+                    <th>Fajr</th>
+                    <th>Iqama</th>
+                    <th>Sunrise</th>
+                    <th>Zuhr</th>
+                    <th>Iqama</th>
+                    <th>Asr</th>
+                    <th>Iqama</th>
+                    <th>Maghrib</th>
+                    <th>Iqama</th>
+                    <th>Isha</th>
+                    <th>Iqama</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <script src="https://okay-apps.github.io/simple-loading-indicator.js/simple-loading-indicator.min.js"></script>
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="monthly.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- <meta http-equiv="refresh" content="10"> -->
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+    integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+  <title>Daily Prayer</title>
+
+  <style>
+    .display-1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4rem;
+      font-weight: 900;
+    }
+
+    .display-2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    .display-3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    .display-4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    table {
+      height: 100%;
+      font-size: 100%;
+      /* border: solid 2px;
+      border-radius: 10px;
+      width: 100%;
+      height: 80%; */
+    }
+
+    table td,
+    th {
+      font-size: 2vw;
+    }
+
+    .container-small {
+      max-width: 600px;
+    }
+
+    .container-medium {
+      max-width: 750px;
+    }
+
+    .calendar-day.card {
+      margin: 10px 0;
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+
+      .card-header {
+        padding: .75rem .5rem;
+      }
+
+      .card-body {
+        padding: .5rem;
+      }
+
+      .text-small {
+        font-size: .83rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="text-center h-100">
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+      <div class="col m-auto"><div id="analog-clock" ></div></div>
+      <div class="col m-auto">
+        <div id="dailyprayers" class="text-center py-1 h-100">
+          <!-- <h2 class="display-2">Daily Prayer</h2> -->
+          <div class="h-100">
+            <table class="table table-hover daily-prayer" style="height: 90%">
+              <thead>
+                <tr>
+                  <th class="" id="date" colspan="3">Loading...</th>
+                </tr>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Athan</th>
+                  <th scope="col">Iqama</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Fajr</th>
+                  <td id="fajr"></td>
+                  <td id="fajri"></td>
+                </tr>
+                <tr>
+                  <th scope="row">Sunrise</th>
+                  <td id="sunrise" colspan="2"></td>
+                </tr>
+                <tr>
+                  <th scope="row">Duhr</th>
+                  <td id="zuhr"></td>
+                  <td id="zuhri"></td>
+                </tr>
+                <tr>
+                  <th scope="row">Asr</th>
+                  <td id="asr"></td>
+                  <td id="asri"></td>
+                </tr>
+                <tr>
+                  <th scope="row">Maghrib</th>
+                  <td id="maghrib"></td>
+                  <td id="maghribi"></td>
+                </tr>
+                <tr>
+                  <th scope="row">Isha</th>
+                  <td id="esha"></td>
+                  <td id="eshai"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script async src="daily.js"></script>
+  <script async src="../analog-clock/clock.js"></script>
+  <link rel="stylesheet" href="../analog-clock/clock.css" />
+</body>
+
+</html>

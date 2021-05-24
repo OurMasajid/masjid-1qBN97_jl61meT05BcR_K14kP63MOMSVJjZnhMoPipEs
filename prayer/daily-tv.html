@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="refresh" content="8000">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+    crossorigin="anonymous">
+
+  <title>Daily Prayer</title>
+
+  <style>
+    .display-1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4rem;
+      font-weight: 900;
+    }
+
+    .display-2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    .display-3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    .display-4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    .navbar {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .navbar-brand {
+      font-size: 45px;
+      font-weight: 1000;
+    }
+
+    .navbar-nav .btn {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: 1000;
+      border: none;
+    }
+
+    @media (min-width: 1200px) {
+      .navbar-nav .btn {
+        margin-left: 10px;
+      }
+    }
+
+    .logo {
+      height: 400px;
+    }
+
+    @media (max-width: 800px) {
+      .logo {
+        height: 250px;
+      }
+
+    }
+
+    hr.star-light {
+      max-width: 15rem;
+      padding: 0;
+      text-align: center;
+      border: none;
+      border-top: solid .25rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    table {
+      border: solid 2px;
+      border-radius: 10px;
+      width: 100%;
+      height: 80%;
+    }
+
+    table td, th {
+      font-size: 27px;
+    }
+
+    .container-small {
+      max-width: 600px;
+    }
+
+    .container-medium {
+      max-width: 750px;
+    }
+
+    .calendar-day.card {
+      margin: 10px 0;
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+
+      .card-header {
+        padding: .75rem .5rem;
+      }
+
+      .card-body {
+        padding: .5rem;
+      }
+
+      .text-small {
+        font-size: .83rem;
+      }
+    }
+
+    .event-title {
+      font-size: 2.2rem;
+      font-family: 'Abel', sans-serif;
+    }
+
+    .cursor-pointer {
+      cursor: pointer;
+    }
+
+    .top-hr {
+      border-top: 1px solid rgba(0, 0, 0, .1);
+    }
+
+    .btn-scroll-top {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+    }
+  </style>
+</head>
+
+<body class="text-center h-100">
+  <div id="dailyprayers" class="text-center py-1 h-100">
+    <!-- <h2 class="display-2">Daily Prayer</h2> -->
+    <div class="container container-small h-100">
+      <table class="table table-striped table-hover daily-prayer" style="height: 90%">
+        <thead>
+          <tr>
+            <th class="display-2" id="date" colspan="3">Loading...</th>
+          </tr>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Athan</th>
+            <th scope="col">Iqama</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Fajr</th>
+            <td id="fajr"></td>
+            <td id="fajri"></td>
+          </tr>
+          <tr>
+            <th scope="row">Sunrise</th>
+            <td id="sunrise" colspan="2"></td>
+          </tr>
+          <tr>
+            <th scope="row">Duhr</th>
+            <td id="zuhr"></td>
+            <td id="zuhri"></td>
+          </tr>
+          <tr>
+            <th scope="row">Asr</th>
+            <td id="asr"></td>
+            <td id="asri"></td>
+          </tr>
+          <tr>
+            <th scope="row">Maghrib</th>
+            <td id="maghrib"></td>
+            <td id="maghribi"></td>
+          </tr>
+          <tr>
+            <th scope="row">Isha</th>
+            <td id="esha"></td>
+            <td id="eshai"></td>
+          </tr>
+          <tr>
+            <th class="font-weight-bold" colspan="3" id="update"></th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script async src="daily.js"></script>
+</body>
+
+</html>

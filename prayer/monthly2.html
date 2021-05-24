@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+
+    <title>Monthly Prayer</title>
+
+    <style>
+        @media print {
+
+            .table td,
+            .table th {
+                background-color: #fff !important;
+            }
+
+            .scr-only {
+                display: none;
+            }
+        }
+
+        body {
+            -webkit-print-color-adjust: exact;
+            font-family: Verdana, Geneva, sans-serif;
+        }
+
+        h2 {
+            padding: 0;
+            margin: 0;
+        }
+
+        b {
+            background: yellow;
+        }
+
+        .headings {
+            padding: 10px;
+            color: darkblue;
+        }
+
+        .headings p {
+            padding: 0;
+            margin: 0;
+        }
+
+        th,
+        td {
+            padding: 0rem !important;
+        }
+
+        th {
+            font-weight: 100 !important;
+        }
+
+        td {
+            font-size: 17px;
+        }
+
+        th {
+            background: gray;
+            color: white;
+        }
+
+        td:nth-child(1) {
+            color: darkblue
+        }
+
+        td:nth-child(3),
+        td:nth-child(6),
+        td:nth-child(8),
+        td:nth-child(10),
+        td:nth-child(12) {
+            color: red;
+        }
+
+        tr:nth-child(even) {
+            background-color: #d1d1d1 !important;
+        }
+
+        table {
+            width: 7.5in;
+            height: 9in;
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+
+        .scr-only {
+            font-size: 20px;
+        }
+
+        .m-2 {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body style="text-align:center">
+    <div class="scr-only m-2">
+        <button onclick="window.print();" class="btn btn-primary scr-only">Click to print</button>
+    </div>
+    <div class="scr-only">
+        Month:
+        <select id="selectedMonth" onchange="monthChanged()">
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
+    </div>
+    <hr class="scr-only">
+    <div class="headings">
+        <h2 id="masjidname">{title}</h2>
+        <p id="masjidaddress">{address}</p>
+    </div>
+    <div>
+        <table align="center">
+            <thead>
+                <tr class="">
+                    <th class="Date">Date</th>
+                    <th class="Day">Day</th>
+                    <th class="Fajr">Fajr</th>
+                    <th class="fIqama">Iqama</th>
+                    <th class="Sunrise">Sunrise</th>
+                    <th class="Zuhr">Zuhr</th>
+                    <th class="zIqama">Iqama</th>
+                    <th class="Asr">Asr</th>
+                    <th class="aIqama">Iqama</th>
+                    <th class="Maghrib">Maghrib</th>
+                    <th class="mIqama">Iqama</th>
+                    <th class="Esha">Esha</th>
+                    <th class="eIqama">Iqama</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+                <tr>
+                    <td class="Date">Date</td>
+                    <td class="Day">Day</td>
+                    <td class="Fajr">Fajr</td>
+                    <td class="fIqama">Iqama</td>
+                    <td class="Sunrise">Sunrise</td>
+                    <td class="Zuhr">Zuhr</td>
+                    <td class="zIqama">Iqama</td>
+                    <td class="Asr">Asr</td>
+                    <td class="aIqama">Iqama</td>
+                    <td class="Maghrib">Maghrib</td>
+                    <td class="mIqama">Iqama</td>
+                    <td class="Esha">Esha</td>
+                    <td class="eIqama">Iqama</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://okay-apps.github.io/simple-loading-indicator.js/simple-loading-indicator.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="monthly2.js"></script>
+</body>
+
+</html>

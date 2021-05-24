@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- <meta http-equiv="refresh" content="10"> -->
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+    integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+  <title>Daily Prayer</title>
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .title {
+      font-size: 10vw;
+    }
+
+    .h1 {
+      font-size: 3.3vw;
+    }
+
+    .h2 {
+      font-size: 2.3vw;
+    }
+  </style>
+</head>
+
+<body class="text-center h-100">
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+      <div class="col-12 m-auto">
+        <div id="date" class="d-none"></div>
+        <div id="digi-clock" class="title"></div>
+      </div>
+      <div class="col">
+        <div class="h1">Fajr</div>
+        <div class="h2" id="fajr"></div>
+        <div class="h2" id="fajri"></div>
+      </div>
+      <div class="col">
+        <div class="h1">Sunrise</div>
+        <div class="h2" id="sunrise"></div>
+      </div>
+      <div class="col">
+        <div class="h1">Duhr</div>
+        <div class="h2" id="zuhr"></div>
+        <div class="h2" id="zuhri"></div>
+      </div>
+      <div class="col">
+        <div class="h1">Asr</div>
+        <div class="h2" id="asr"></div>
+        <div class="h2" id="asri"></div>
+      </div>
+      <div class="col">
+        <div class="h1">Maghrib</div>
+        <div class="h2" id="maghrib"></div>
+        <div class="h2" id="maghribi"></div>
+      </div>
+      <div class="col">
+        <div class="h1">Isha</div>
+        <div class="h2" id="esha"></div>
+        <div class="h2" id="eshai"></div>
+      </div>
+      <div class="col-12 d-none" id="update"></div>
+    </div>
+  </div>
+
+  <script async src="daily.js"></script>
+  <link rel="stylesheet" href="../analog-clock/clock.css" />
+  <script>
+    setInterval(function () { document.getElementById("digi-clock").innerHTML = new Date().toLocaleTimeString() }, 1000);
+  </script>
+</body>
+
+</html>
