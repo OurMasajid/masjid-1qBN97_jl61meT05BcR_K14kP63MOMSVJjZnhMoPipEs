@@ -85,6 +85,9 @@ var OM = {
     }
     return hours + ":" + mins + ampm;
   },
+  // getFormatedDate: function (datestring) {
+  //   return new Date(datestring.replace(/-/g, "/")).toDateString();
+  // },
   start: function () {
     setTimeout(this.httpLoader("OM.feedDataToComponents()"));
   }
@@ -273,9 +276,17 @@ var MCalendar = {
       else {
         uiEvent.find(".event-description").remove();
       }
-      uiEvent
+      if (obj["startdatetime"]) {
+        uiEvent
         .find(".event-time")
-        .html(this.getEventTime(obj["starttime"], obj["endtime"]));
+        .html(this.getEventTime(obj["startdatetime"], obj["enddatetime"]));
+      }
+      else if ("startdate") {
+        uiEvent
+        .find(".event-time")
+        .html(OM.getFormatedDate(obj["startdate"]));
+      }
+      
       this.uiParent.append(uiEvent);
     }
 
