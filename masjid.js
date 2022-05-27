@@ -281,7 +281,7 @@ var MCalendar = {
         .find(".event-time")
         .html(this.getEventTime(obj["startdatetime"], obj["enddatetime"]));
       }
-      else if ("startdate") {
+      else if (obj["startdate"]) {
         uiEvent
         .find(".event-time")
         .html(OM.getFormatedDate(new Date(obj["startdate"].replace(/-/g,"/"))));
