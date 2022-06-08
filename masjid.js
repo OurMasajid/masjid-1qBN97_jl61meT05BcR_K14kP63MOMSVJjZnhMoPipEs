@@ -33,6 +33,9 @@ var OM = {
     if ($(".m-calendar")) {
       setTimeout(MCalendar.start());
     }
+    if ($(".m-event")) {
+      setTimeout(Events.start());
+    }
     if ($(".daily-prayer")) {
       setTimeout(DailyPrayer.start());
     }
@@ -155,8 +158,8 @@ var DailyPrayer = {
       if (i === dataLength - 1) {
         tomorrow = OM.data["Daily Prayer"]["data"][0];
       }
-      else{
-        tomorrow = OM.data["Daily Prayer"]["data"][i+1];
+      else {
+        tomorrow = OM.data["Daily Prayer"]["data"][i + 1];
       }
 
       if (day["Month"] == OM.todayMonth && day["Date"] == OM.todayDay) {
@@ -201,7 +204,6 @@ var DailyPrayer = {
     }
   }
 };
-
 var JummaPrayer = {
   jummaData: "",
   ui: $(".jumma-prayer").parent(),
@@ -278,15 +280,15 @@ var MCalendar = {
       }
       if (obj["startdatetime"]) {
         uiEvent
-        .find(".event-time")
-        .html(this.getEventTime(obj["startdatetime"], obj["enddatetime"]));
+          .find(".event-time")
+          .html(this.getEventTime(obj["startdatetime"], obj["enddatetime"]));
       }
       else if (obj["startdate"]) {
         uiEvent
-        .find(".event-time")
-        .html(OM.getFormatedDate(new Date(obj["startdate"].replace(/-/g,"/"))));
+          .find(".event-time")
+          .html(OM.getFormatedDate(new Date(obj["startdate"].replace(/-/g, "/"))));
       }
-      
+
       this.uiParent.append(uiEvent);
     }
 
@@ -303,6 +305,39 @@ var MCalendar = {
     );
   }
 };
+var Events = {
+  data: "",
+  uiParent: $(".m-event"),
+  uiEvent: $(".m-event")
+    .find(".event")
+    .clone(),
+  start: function () {
+    this.data = OM.data["Events"]["data"];
+    setTimeout(this.setData());
+  },
+  setData: function () {
+    this.uiParent.html("");
+    for (let i = 0; i < this.data.length; i++) {
+      var uiEvent = this.uiEvent.clone();
+      var obj = this.data[i];
+      console.log(obj);
+      uiEvent.find(".event-title").html(obj["Title"]);
+      if (obj["Frequency"]) {
+        uiEvent.find(".event-frequnecy").html(obj["Frequency"]);
+      }
+      else {
+        uiEvent.find(".event-frequnecy").remove();
+      }
+      if (obj["Description"]) {
+        uiEvent.find(".event-description").html(obj["Description"]);
+      }
+      else {
+        uiEvent.find(".event-description").remove();
+      }
+      this.uiParent.append(uiEvent);
+    }
+  }
+}
 var OMNews = {
   ui: $(".newses"),
   start: function () {
